@@ -114,3 +114,15 @@ As branches foram mantidas depois dos pull requests, e o código final está tod
 - Calcular a mediana da imputação só com o treino, dentro de um `Pipeline`, para não usar informação do teste.
 - Estimar o `meses_contrato` ausente a partir de `valor_total / valor_mensal`, em vez de usar a mediana para todos.
 - Testar outros modelos, como Random Forest e regressão logística, e ajustar o limiar de decisão para ganhar recall.
+
+
+## Vídeo de apresentação
+
+[Assistir ao vídeo de apresentação do projeto](https://drive.google.com/file/d/1symAcwRN9-WPmVJLmMt9BH-1P4lqibbA/view?usp=sharing)
+
+
+
+
+
+
+
