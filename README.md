@@ -1,9 +1,9 @@
 # Churn Telecom: previsão de cancelamento de clientes
 
 Projeto de recuperação do módulo 1 de **Desenvolvimento de IA para Análise Preditiva**.
-Autor: SEU NOME
+Autor: Simei Diniz
 
-Vídeo de apresentação: [assistir no Google Drive](COLE_AQUI_O_LINK_DO_VIDEO)
+Vídeo de apresentação: [assistir no Google Drive](https://drive.google.com/file/d/1symAcwRN9-WPmVJLmMt9BH-1P4lqibbA/view?usp=drive_link)
 
 ## O problema
 
@@ -20,7 +20,7 @@ A base está em `data/dataset_recuperacao_telecom.csv` e tem 7.068 linhas e 21 c
 
 ## O que o projeto faz
 
-O notebook `analise_preditiva_churn.ipynb` segue as fases do edital:
+O notebook `analise_preditiva_churn2.ipynb` segue as fases do edital:
 
 1. **Análise exploratória:** dimensões, tipos de dados, `describe()`, distribuição do alvo, correlação de Pearson e tempo de contrato por status.
 2. **Limpeza:** remoção de duplicatas, tratamento dos outliers de `valor_mensal` e imputação pela mediana, com boxplots antes e depois.
@@ -69,7 +69,7 @@ Gráficos gerados pelo notebook:
 │   ├── fase2_boxplots_outliers.png
 │   ├── fase6_analise_overfitting.png
 │   └── fase7_matrizes_confusao_finais.png
-├── analise_preditiva_churn.ipynb
+├── analise_preditiva_churn2.ipynb
 ├── requirements.txt
 └── README.md
 ```
@@ -78,15 +78,15 @@ Gráficos gerados pelo notebook:
 
 **No Google Colab**
 
-1. Faça o upload do `analise_preditiva_churn.ipynb` no Colab.
+1. Faça o upload do `analise_preditiva_churn2.ipynb` no Colab.
 2. Abra o painel de arquivos, crie a pasta `data` e coloque nela o arquivo `dataset_recuperacao_telecom.csv`.
 3. Vá em "Ambiente de execução → Reiniciar e executar tudo".
 
 **Na sua máquina**
 
 ```bash
-git clone https://github.com/SEU_USUARIO/NOME_DO_REPOSITORIO.git
-cd NOME_DO_REPOSITORIO
+git clone https://github.com/SimeiDiniz/projeto-churn-telecom.git
+cd projeto-churn-telecom
 python -m venv venv
 source venv/bin/activate        # no Windows: venv\Scripts\activate
 pip install -r requirements.txt
@@ -94,19 +94,21 @@ pip install notebook
 jupyter notebook
 ```
 
-Abra o `analise_preditiva_churn.ipynb` e execute as células em ordem. O notebook lê a base de `data/` e salva os gráficos em `outputs/`.
+Abra o `analise_preditiva_churn2.ipynb` e execute as células em ordem. O notebook lê a base de `data/` e salva os gráficos em `outputs/`.
 
 ## Organização do Git
 
-O desenvolvimento seguiu o fluxo com `develop` e uma feature branch para cada tarefa, abertas a partir da `develop`:
+O projeto foi organizado com uma branch principal, uma branch de desenvolvimento e branches de funcionalidade:
 
 - `main`: versão final do projeto;
-- `develop`: onde as features foram reunidas;
-- `feature/estrutura-dados`: pastas, base de dados e `requirements.txt`;
-- `feature/notebook`: o notebook com as 7 fases;
-- `feature/documentacao`: este README.
+- `develop`: branch de desenvolvimento;
+- `feature/eda`: análise exploratória dos dados;
+- `feature/limpeza`: limpeza e tratamento dos dados;
+- `feature/modelagem`: treinamento e avaliação dos modelos;
+- `feature/documentacao`: documentação do projeto.
 
-As branches foram mantidas depois dos pull requests, e o código final está todo na `main`.
+As branches foram mantidas no repositório para demonstrar a organização das etapas do desenvolvimento. A versão final do projeto está publicada na branch `main`.
+
 
 ## Melhorias possíveis
 
@@ -114,11 +116,6 @@ As branches foram mantidas depois dos pull requests, e o código final está tod
 - Calcular a mediana da imputação só com o treino, dentro de um `Pipeline`, para não usar informação do teste.
 - Estimar o `meses_contrato` ausente a partir de `valor_total / valor_mensal`, em vez de usar a mediana para todos.
 - Testar outros modelos, como Random Forest e regressão logística, e ajustar o limiar de decisão para ganhar recall.
-
-
-## Vídeo de apresentação
-
-[Assistir ao vídeo de apresentação do projeto](https://drive.google.com/file/d/1symAcwRN9-WPmVJLmMt9BH-1P4lqibbA/view?usp=sharing)
 
 
 
